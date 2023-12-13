@@ -29,34 +29,4 @@ async function login() {
     alert(response.message);
   }
 }
-/* definePageMeta({
-  middleware: ["check-lock-token"],
-});
-const project = ref("project_01");
-const inputPassword = ref("");
-
-async function login() {
-  const response = await $fetch("/api/lock", {
-    method: "post",
-    headers: { "Content-Type": "application/json" },
-    body: { inputPassword, project },
-  });
-
-  const { projectId, token, expiryDate } = response;
-  if (token) {
-    setCookie("authToken", token);
-    $fetch(`http://localhost:1337/api/lock-tokens/${projectId}`, {
-      method: "put",
-      body: {
-        data: {
-          token: token,
-          expiration: expiryDate,
-        },
-      },
-    });
-    navigateTo("/");
-  } else {
-    alert(response.message);
-  }
-} */
 </script>

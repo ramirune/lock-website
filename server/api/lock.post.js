@@ -31,27 +31,3 @@ export default defineEventHandler(async (req) => {
     return { loggedIn: false, message: "Invalid password!!!!!" };
   }
 });
-
-/* import jwt from "jsonwebtoken";
-//const correctPassword = "superdev";
-const secretKey = "secret_lock_token";
-
-export default defineEventHandler(async (req) => {
-  const { inputPassword, project } = await readBody(req);
-  const { data } = await $fetch(
-    `http://localhost:1337/api/lock-projects?filters[title][$eq]=${project._value}`,
-    { method: "get" }
-  );
-
-  const projectPassword = data[0].attributes.password;
-  const projectId = data[0].id;
-  if (inputPassword._value === projectPassword) {
-    const token = jwt.sign({ inputPassword }, secretKey);
-    const currentDate = new Date();
-    const expiryDate = new Date(currentDate.getTime() + 24 * 60 * 60 * 1000);
-    return { projectId, token, expiryDate };
-  } else {
-    return { message: "Wrong password!" };
-  }
-});
- */
